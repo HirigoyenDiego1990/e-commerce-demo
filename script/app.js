@@ -1,84 +1,32 @@
 // --- BASE DE DATOS Y ESTADO LOCALSTORAGE ---
 const initialProducts = [
-  { 
-    id: 101, 
-    nombre: "Remera Patricio Rey - Redondos", 
-    categoria: "nacional", 
-    precio: 18500, 
-    stock: { S: 5, M: 10, L: 8, XL: 4 }, 
-    imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" 
+  {
+    id: "p1",
+    name: "Remera Iron Maiden - Eddie Trooper",
+    price: 18500,
+    img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
+    sizes: { S: 5, M: 8, L: 2, XL: 0 }
   },
-  { 
-    id: 102, 
-    nombre: "Remera AC/DC - Back in Black", 
-    categoria: "internacional", 
-    precio: 21000, 
-    stock: { M: 6, L: 12, XL: 5, XXL: 2 }, 
-    imagen: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" 
+  {
+    id: "p2",
+    name: "Remera Batman - Comic Vintage",
+    price: 17200,
+    img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+    sizes: { S: 3, M: 10, L: 6, XL: 4 }
   },
-  { 
-    id: 103, 
-    nombre: "Remera Soda Stereo - Doble Vida", 
-    categoria: "nacional", 
-    precio: 19000, 
-    stock: { S: 4, M: 8, L: 6 }, 
-    imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80" 
+  {
+    id: "p3",
+    name: "Remera AC/DC - Back in Black",
+    price: 18000,
+    img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=80",
+    sizes: { S: 0, M: 4, L: 5, XL: 3 }
   },
-  { 
-    id: 104, 
-    nombre: "Remera Iron Maiden - Eddie Trooper", 
-    categoria: "heavy", 
-    precio: 23000, 
-    stock: { M: 5, L: 9, XL: 3 }, 
-    imagen: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 105, 
-    nombre: "Remera La Renga - Detonador de Sueños", 
-    categoria: "nacional", 
-    precio: 18500, 
-    stock: { S: 3, M: 7, L: 10, XL: 4, XXL: 1 }, 
-    imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 106, 
-    nombre: "Remera Metallica - Master of Puppets", 
-    categoria: "heavy", 
-    precio: 22500, 
-    stock: { S: 2, L: 8, XL: 5 }, 
-    imagen: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 107, 
-    nombre: "Remera Charly García - Say No More", 
-    categoria: "nacional", 
-    precio: 19500, 
-    stock: { M: 6, L: 6, XL: 2 }, 
-    imagen: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 108, 
-    nombre: "Remera Nirvana - Nevermind Smile", 
-    categoria: "internacional", 
-    precio: 20000, 
-    stock: { S: 8, M: 15, L: 10, XL: 6 }, 
-    imagen: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 109, 
-    nombre: "Remera Ramones - Presidential Seal", 
-    categoria: "internacional", 
-    precio: 19800, 
-    stock: { M: 4, L: 7, XXL: 3 }, 
-    imagen: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" 
-  },
-  { 
-    id: 110, 
-    nombre: "Remera Pappo's Blues - Riff", 
-    categoria: "nacional", 
-    precio: 18000, 
-    stock: { S: 5, M: 5, L: 5, XL: 2 }, 
-    imagen: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" 
+  {
+    id: "p4",
+    name: "Remera Spider-Man - Symbiote",
+    price: 19000,
+    img: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
   }
 ];
 
