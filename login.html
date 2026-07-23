@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Administrador | ROCK & COMIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ ROCK & COMIC ⚡</a>
+      <nav>
+        <a href="index.html">← Volver a la Tienda</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2 style="font-family: var(--font-title); font-size: 2.2rem; margin-bottom: 1rem; text-align: center;">Acceso Administrador</h2>
+      <form class="login-form" onsubmit="loginAdmin(event)">
+        <div class="form-group">
+          <label>Usuario Admin</label>
+          <input type="text" id="login-user" required placeholder="Ingresá tu usuario">
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input type="password" id="login-pass" required placeholder="Ingresá tu contraseña">
+        </div>
+        <button type="submit" class="btn-primary" style="margin-top: 1rem;">Ingresar al Panel</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function loginAdmin(e) {
+      e.preventDefault();
+      const u = document.getElementById('login-user').value;
+      const p = document.getElementById('login-pass').value;
+
+      const storedCreds = JSON.parse(localStorage.getItem('rock_admin')) || { user: 'admin', pass: 'admin123' };
+
+      if (u === storedCreds.user && p === storedCreds.pass) {
+        sessionStorage.setItem('rock_admin_logged', 'true');
+        window.location.href = 'admin.html';
+      } else {
+        alert("Usuario o contraseña incorrectos.");
+      }
+    }
+  </script>
+</body>
+</html>

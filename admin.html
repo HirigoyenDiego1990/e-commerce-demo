@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control Admin | ROCK & COMIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+  <!-- HEADER ADMIN -->
+  <header>
+    <div class="nav-container">
+      <a href="admin.html" class="logo">⚡ ADMIN PANEL ⚡</a>
+      <nav>
+        <a href="index.html" target="_blank">Ver Tienda 🔗</a>
+        <a onclick="logoutAdmin()" style="color: var(--danger);">Cerrar Sesión 🚪</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-icon" id="theme-toggle" title="Cambiar Tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PANEL ADMIN -->
+  <section id="admin-section">
+    <h2 class="section-title">Control Total de Inventario y Ventas</h2>
+    
+    <div class="admin-nav">
+      <button class="admin-tab active" onclick="switchAdminTab('stock-tab', this)">Gestión de Stock y Precios</button>
+      <button class="admin-tab" onclick="switchAdminTab('orders-tab', this)">Pedidos en Tiempo Real</button>
+      <button class="admin-tab" onclick="switchAdminTab('settings-tab', this)">Ajustes de Seguridad</button>
+    </div>
+
+    <!-- TAB 1: STOCK -->
+    <div id="stock-tab" class="admin-subtab">
+      <h3>Inventario por Talle y Modificación de Precios</h3>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio ($)</th>
+            <th>Stock por Talle (S / M / L / XL)</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="admin-stock-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- TAB 2: PEDIDOS -->
+    <div id="orders-tab" class="admin-subtab" style="display: none;">
+      <h3>Historial y Estado de Pedidos Realizados</h3>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID Orden</th>
+            <th>Fecha</th>
+            <th>Comprador / DNI / Tel</th>
+            <th>Detalle del Producto</th>
+            <th>Total</th>
+            <th>Control de Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="admin-orders-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="table-responsive">
+  <table class="admin-table">
+    <!-- Tu contenido th, tr, td -->
+  </table>
+</div>
+
+    <!-- TAB 3: SEGURIDAD -->
+    <div id="settings-tab" class="admin-subtab" style="display: none;">
+      <h3>Cambiar Usuario y Contraseña de Admin</h3>
+      <form style="max-width: 400px; margin-top: 1rem;" onsubmit="updateAdminCredentials(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Nuevo Usuario Admin:</label>
+          <input type="text" id="new-admin-user" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Nueva Contraseña:</label>
+          <input type="password" id="new-admin-pass" required>
+        </div>
+        <button type="submit" class="btn-primary">Guardar Credenciales</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="script/admin.js"></script>
+</body>
+</html>

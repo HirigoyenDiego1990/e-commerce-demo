@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROCK & COMIC TEES | Tienda Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">⚡ ROCK & COMIC ⚡</a>
+      <nav>
+        <a href="#hero-section">Inicio</a>
+        <a href="#about-section">Nosotros</a>
+        <a href="#catalog-section">Catálogo</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-icon" id="theme-toggle" title="Cambiar Tema">🌙</button>
+        <button class="btn-icon" id="cart-toggle" onclick="toggleCart()" title="Carrito">
+          🛒 <span class="badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <div id="hero-section">
+    <div class="hero">
+      <h1>REMERAS CON ACTITUD</h1>
+      <p>Diseños exclusivos de Rock Clásico, Metal, Comics y Cultura Geek.</p>
+      <a href="#catalog-section" class="btn-primary">Explorar Catálogo</a>
+    </div>
+  </div>
+
+  <!-- BUSCADOR EN TIEMPO REAL -->
+  <div class="search-section">
+    <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar por nombre o banda (ej: Iron Maiden, Batman)..." oninput="filterProducts()">
+  </div>
+
+  <!-- CATÁLOGO -->
+  <section id="catalog-section">
+    <h2 class="section-title">Nuestras Remeras</h2>
+    <div class="catalog-grid" id="product-grid"></div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="about-section">
+    <h2 class="section-title">Sobre Nuestro Local</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center;">
+      <div>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">
+          Nacimos en el corazón de la ciudad en 2018 como un emprendimiento independiente apasionado por la música y el arte visual.
+        </p>
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text-muted);">
+          Todas nuestras remeras están confeccionadas en <strong>100% Algodón Peinado 24/1</strong> de primera calidad, con estampados en serigrafía de alta durabilidad.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Local Rock & Comic" style="width: 100%; border-radius: 8px;">
+    </div>
+  </section>
+
+  <!-- CARRITO LATERAL -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: var(--font-title); font-size: 1.8rem;">Tu Carrito</h3>
+      <button class="close-btn" onclick="toggleCart()">&times;</button>
+    </div>
+    
+    <div class="cart-items" id="cart-items-container"></div>
+
+    <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+      <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: bold; margin-bottom: 1rem;">
+        <span>Total:</span>
+        <span id="cart-total-price">$0</span>
+      </div>
+
+      <form class="checkout-form" onsubmit="processCheckout(event)">
+        <div class="form-group">
+          <input type="text" id="client-name" placeholder="Nombre Completo *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="client-dni" placeholder="DNI / Cédula *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="client-phone" placeholder="Teléfono / WhatsApp *" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem; background: #009ee3;">
+          Finalizar Compra con Mercado Pago
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 ROCK & COMIC TEES. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script/app.js"></script>
+</body>
+</html>
