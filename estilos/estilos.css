@@ -202,8 +202,9 @@ section {
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 remeras por fila en PC */
   gap: 1.5rem;
+  width: 100%;
 }
 
 .product-card {
@@ -528,9 +529,24 @@ footer {
     gap: 0.8rem;
   }
 
+  @media (max-width: 1024px) {
   .catalog-grid {
-    grid-template-columns: 1fr; /* 1 sola columna de productos en celulares chicos */
+    grid-template-columns: repeat(3, 1fr); /* 3 por fila en laptops/tablets horizontales */
   }
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 por fila en tablets verticales */
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr; /* 1 por fila en celulares */
+  }
+}
 
   .login-container {
     margin: 1.5rem auto;

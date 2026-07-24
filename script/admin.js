@@ -105,12 +105,17 @@ function saveAdminProduct(productId) {
 });
 }
 
-// --- TABLA DE PEDIDOS ---
+// --- CONFIGURACIÓN DE INFINITE SCROLL PARA PEDIDOS ---
+const ORDERS_PER_PAGE = 10; // Carga de a 10 pedidos por tanda
+let currentOrdersPage = 1;
+let isOrdersLoading = false;
+
 function renderAdminOrders() {
   const tbody = document.getElementById('admin-orders-tbody');
   if (!tbody) return;
   tbody.innerHTML = '';
 
+  // 1. Filtramos los pedidos activos
   const activeOrders = orders.filter(o => o.status !== 'Archivado');
 
   if (activeOrders.length === 0) {
@@ -118,14 +123,18 @@ function renderAdminOrders() {
     return;
   }
 
-  activeOrders.forEach(order => {
+  // 2. Tomamos únicamente los pedidos que corresponden a la tanda actual de scroll
+  const visibleOrders = activeOrders.slice(0, currentOrdersPage * ORDERS_PER_PAGE);
+
+  // 3. Renderizado de las filas
+  visibleOrders.forEach(order => {
     const tr = document.createElement('tr');
     const detailsHtml = order.items.map(i => `${i.qty}x ${i.name} (${i.size})`).join('<br>');
 
-    // 1. Dejamos solo los dígitos del teléfono
+    // Dejamos solo los dígitos del teléfono
     const cleanPhone = String(order.customer.phone || '').replace(/\D/g, '');
     
-    // 2. Mensaje opcional predeterminado para que el dueño salude con contexto
+    // Mensaje predeterminado para WhatsApp
     const waMessage = encodeURIComponent(`Hola ${order.customer.name}, te escribimos por tu pedido #${order.id}`);
     const waUrl = `https://wa.me/${cleanPhone}?text=${waMessage}`;
 
@@ -159,6 +168,37 @@ function renderAdminOrders() {
     tbody.appendChild(tr);
   });
 }
+
+// Detector automático para scroll en pedidos
+function setupAdminOrdersInfiniteScroll() {
+  const sentinel = document.getElementById('orders-scroll-sentinel');
+  if (!sentinel) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    const activeOrders = orders.filter(o => o.status !== 'Archivado');
+    
+    // Si el administrador llega al fondo de la tabla y quedan pedidos por cargar
+    if (entry.isIntersecting && !isOrdersLoading) {
+      if (currentOrdersPage * ORDERS_PER_PAGE < activeOrders.length) {
+        isOrdersLoading = true;
+        
+        setTimeout(() => {
+          currentOrdersPage++;
+          renderAdminOrders();
+          isOrdersLoading = false;
+        }, 300);
+      }
+    }
+  }, {
+    rootMargin: '100px'
+  });
+
+  observer.observe(sentinel);
+}
+
+// Inicializar el detector
+document.addEventListener('DOMContentLoaded', setupAdminOrdersInfiniteScroll);
 
 function updateOrderStatus(orderId, newStatus) {
   const order = orders.find(o => o.id === orderId);

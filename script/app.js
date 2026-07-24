@@ -2,32 +2,193 @@
 const initialProducts = [
   {
     id: "p1",
-    name: "Remera Iron Maiden - Eddie Trooper",
+    name: "Remera - The Beatles",
     price: 18500,
-    img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80",
+    img: "/img/img 01 - the beatles.webp",
     sizes: { S: 5, M: 8, L: 2, XL: 0 }
   },
   {
     id: "p2",
-    name: "Remera Batman - Comic Vintage",
+    name: "Remera - Black Sabbath",
     price: 17200,
-    img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+    img: "/img/img 02 - black sabbath.webp",
     sizes: { S: 3, M: 10, L: 6, XL: 4 }
   },
   {
     id: "p3",
-    name: "Remera AC/DC - Back in Black",
+    name: "Remera - Foo Figther",
     price: 18000,
-    img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=80",
+    img: "/img/img 03 - foo fighter.webp",
     sizes: { S: 0, M: 4, L: 5, XL: 3 }
   },
   {
     id: "p4",
-    name: "Remera Spider-Man - Symbiote",
+    name: "Remera - Iron Maiden",
     price: 19000,
-    img: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80",
+    img: "/img/img 04 - iron maiden.webp",
     sizes: { S: 2, M: 6, L: 0, XL: 1 }
-  }
+  },
+  {
+    id: "p5",
+    name: "Remera - Mega Death",
+    price: 19000,
+    img: "/img/img 05 - mega death.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p6",
+    name: "Remera - Metallica",
+    price: 19000,
+    img: "/img/img 06 - metallica.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p7",
+    name: "Remera - Misfits",
+    price: 19000,
+    img: "/img/img 07 - misfits.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p8",
+    name: "Remera - Nirvana",
+    price: 19000,
+    img: "/img/img 08 - nirvana.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p9",
+    name: "Remera - Pink Floyd",
+    price: 19000,
+    img: "/img/img 09 - pink floyd.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p10",
+    name: "Remera - Ramones",
+    price: 19000,
+    img: "/img/img 10 - ramones.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p11",
+    name: "Remera - Rolling Stones",
+    price: 19000,
+    img: "/img/img 11 - rolling stones.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p12",
+    name: "Remera - Sex Pistols",
+    price: 19000,
+    img: "/img/img 12 - sex pistols.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p13",
+    name: "Remera - The Clash",
+    price: 19000,
+    img: "/img/img 13 - the clash.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p14",
+    name: "Remera - AC/DC",
+    price: 19000,
+    img: "/img/img 14 - ac dc.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p15",
+    name: "Remera - The Runaways",
+    price: 19000,
+    img: "/img/img 15 - the runaways.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p16",
+    name: "Remera - Bikini Kill",
+    price: 19000,
+    img: "/img/img 16 - bikini kill.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p17",
+    name: "Remera - Punisher",
+    price: 19000,
+    img: "/img/img 17 - punisher.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p18",
+    name: "Remera - Blue pow",
+    price: 19000,
+    img: "/img/img 18 - blue_tshirt_pow_comic.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p19",
+    name: "Remera - Dark purple occult",
+    price: 19000,
+    img: "/img/img 19 - dark_purple_occult_shirt.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p20",
+    name: "Remera - Forest green beast",
+    price: 19000,
+    img: "/img/img 20 - forest_green_beast_tee.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p21",
+    name: "Remera - Grey team x",
+    price: 19000,
+    img: "/img/img 21 - heather_gray_team_x_shirt.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p22",
+    name: "Remera - Yellow zap pop",
+    price: 19000,
+    img: "/img/img 22 - yellow_tshirt_zap_pop_art.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p23",
+    name: "Remera - Wham comic",
+    price: 19000,
+    img: "/img/img 23 - wham_comic_tshirt.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p24",
+    name: "Remera - Red Bam pop",
+    price: 19000,
+    img: "/img/img 24 - red_tshirt_bam_pop_art.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p25",
+    name: "Remera - Psychedelicc mystical eye",
+    price: 19000,
+    img: "/img/img 25 - psychedelic_mystical_eye_tshirt.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p26",
+    name: "Remera - Orange Kaboom comic",
+    price: 19000,
+    img: "/img/img 26 - orange_tshirt_kaboom_comic.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
+  {
+    id: "p27",
+    name: "Remera - Olive green hunter",
+    price: 19000,
+    img: "/img/img 27 - olive_green_hunter_tshirt.webp",
+    sizes: { S: 2, M: 6, L: 0, XL: 1 }
+  },
 ];
 
 let products = JSON.parse(localStorage.getItem('rock_products')) || initialProducts;
@@ -54,11 +215,20 @@ if (themeBtn) {
 }
 
 // --- RENDERING DEL CATÁLOGO ---
-function renderProducts(filterText = '') {
+// --- CONFIGURACIÓN DE INFINITE SCROLL ---
+const ITEMS_PER_PAGE = 8; // 2 filas exactas en PC
+let currentPage = 1;
+let isLoading = false;
+let currentFilter = '';
+
+function renderProducts(filterText = currentFilter) {
+  currentFilter = filterText; // Guardamos el texto del buscador
+  
   const container = document.getElementById('product-grid');
   if (!container) return;
   container.innerHTML = '';
 
+  // 1. Filtrado por nombre
   const filtered = products.filter(p => p.name.toLowerCase().includes(filterText.toLowerCase()));
 
   if (filtered.length === 0) {
@@ -66,14 +236,21 @@ function renderProducts(filterText = '') {
     return;
   }
 
-  filtered.forEach(p => {
+  // 2. Si el usuario está buscando, mostramos todos los resultados.
+  // Si no busca nada, mostramos solo la tanda actual para el infinite scroll.
+  const visibleProducts = filterText !== '' 
+    ? filtered 
+    : filtered.slice(0, currentPage * ITEMS_PER_PAGE);
+
+  // 3. Tu renderizado intacto
+  visibleProducts.forEach(p => {
     const currentSelectedSize = selectedSizes[p.id] || 'M';
     const currentStock = p.sizes[currentSelectedSize] || 0;
 
     const card = document.createElement('div');
     card.className = 'product-card';
     card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" class="product-img">
+      <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy">
       <div class="product-info">
         <div class="product-name">${p.name}</div>
         <div class="product-price">$${p.price.toLocaleString()}</div>
@@ -112,6 +289,35 @@ function renderProducts(filterText = '') {
     container.appendChild(card);
   });
 }
+
+// Detector automático para cargar la siguiente tanda al scrollear
+function setupInfiniteScroll() {
+  const sentinel = document.getElementById('scroll-sentinel');
+  if (!sentinel) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+    
+    // Solo carga más si el usuario llegó al fondo, no hay búsqueda activa y quedan remeras por mostrar
+    if (entry.isIntersecting && !isLoading && !currentFilter) {
+      if (currentPage * ITEMS_PER_PAGE < products.length) {
+        isLoading = true;
+        setTimeout(() => {
+          currentPage++;
+          renderProducts(currentFilter);
+          isLoading = false;
+        }, 300);
+      }
+    }
+  }, {
+    rootMargin: '150px' // Detecta 150px antes del final
+  });
+
+  observer.observe(sentinel);
+}
+
+// Inicializar el detector al cargar el script
+document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
 
 function selectSize(productId, size) {
   selectedSizes[productId] = size;
